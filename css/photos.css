@@ -1,0 +1,44 @@
+.photos-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 4px;
+    padding: 4px;
+}
+.photo-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    cursor: pointer;
+}
+.photo-thumb:hover {
+    opacity: .9;
+}
+.photo-viewer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.95);
+    z-index: 5000;
+}
+.photo-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+.hidden {
+    display: none;
+}
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
