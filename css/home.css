@@ -1,0 +1,178 @@
+.home-screen {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    height: calc(100% - 30px);
+}
+
+.app-grid {
+    margin-top: 12px;
+
+    align-content: start;
+}
+
+.app-icon {
+    position: relative;
+}
+
+.app-icon:active {
+    transform: scale(0.88);
+}
+
+.app-icon span {
+    max-width: 70px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    text-align: center;
+
+    letter-spacing: -0.2px;
+}
+
+.messages::before,
+.photos::before,
+.notes::before,
+.contacts::before,
+.phone::before,
+.settings::before {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-size: 26px;
+}
+
+.messages::before {
+    content: "💬";
+}
+
+.photos::before {
+    content: "🌸";
+}
+
+.notes::before {
+    content: "📝";
+}
+
+.contacts::before {
+    content: "👤";
+}
+
+.phone::before {
+    content: "📞";
+}
+
+
+.settings::before {
+    content: "⚙";
+}
+
+
+.dock {
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.dock-icon {
+    transition:
+        transform .15s ease;
+}
+
+.dock-icon:hover {
+    transform: scale(1.08);
+}
+
+.dock-icon:active {
+    transform: scale(.9);
+}
+
+
+.badge {
+    position: absolute;
+
+    top: -4px;
+    right: 4px;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: #ff3b30;
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,.25);
+}
+
+
+#wallpaper::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.12)
+        );
+
+    pointer-events: none;
+}
+
+@keyframes move {
+
+    0% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(-1deg);
+    }
+
+}
+
+.edit-mode .app-icon {
+    animation:
+        jiggle .15s infinite;
+}
+
+@media (max-width: 450px) {
+
+    body {
+        background: black;
+    }
+
+    #phone {
+        width: 100vw;
+        height: 100vh;
+
+        border-radius: 0;
+    }
+
+}
